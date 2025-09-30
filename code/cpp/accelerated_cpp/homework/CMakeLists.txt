@@ -17,6 +17,6 @@ foreach(hw IN LISTS HW_LIST)
 
     # 3. 统一输出目录，避免产物分散
     set_target_properties(${hw} PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin"
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
     )
 endforeach()

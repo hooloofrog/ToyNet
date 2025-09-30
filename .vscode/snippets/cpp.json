@@ -1,0 +1,24 @@
+{
+    "Class Template": {
+        "prefix": "class",
+        "body": [
+            "class ${1:ClassName} {",
+            "public:",
+            "    ${1:ClassName}();",
+            "    ~${1:ClassName}();",
+            "private:",
+            "    $0",
+            "};"
+        ],
+        "description": "Generate a C++ class template"
+    },
+    "Function Template": {
+        "prefix": "func",
+        "body": [
+            "${1:void} ${2:FunctionName}(${3:}) {",
+            "    $0",
+            "}"
+        ],
+        "description": "Generate a C++ function template"
+    }
+}

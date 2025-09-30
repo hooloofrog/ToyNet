@@ -1,0 +1,50 @@
+{
+    "folders": [
+        {
+            "path": "/home/hooloofrog/ToyNet/code/linux/linux_primer"
+        },
+        {
+            "path": "/home/hooloofrog/ToyNet/code/cpp/accelerated_cpp"
+        }
+    ],
+    "settings": {
+        "json.schemaDownload.enable": false,
+        "editor.fontLigatures": true,
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+        "editor.detectIndentation": false,
+        "better-comments.tags": [
+            {
+                "tag": "!",
+                "color": "#FF5555"
+            },
+            {
+                "tag": "?",
+                "color": "#3498DB"
+            },
+            {
+                "tag": "TODO",
+                "color": "#FF8800"
+            },
+            {
+                "tag": "*",
+                "color": "#50FA7B"
+            },
+            {
+                "tag": "NOTE",
+                "color": "#8BE9FD"
+            }
+        ],
+        "errorLens.enabled": true,
+        "errorLens.fontWeight": "bold",
+        "errorLens.fontSize": "14px",
+        "errorLens.gutterIconsEnabled": true,
+        "gitlens.currentLine.enabled": true,
+        "gitlens.hovers.currentLine.over": "line",
+        "code-runner.executorMap": {
+            "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+            "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt"
+        },
+        "code-runner.runInTerminal": true
+    }
+}

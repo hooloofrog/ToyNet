@@ -1,0 +1,11 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=/home/hooloofrog/ToyNet/code/cpp/accelerated_cpp/build-ninja",
+        "--background-index",
+        "--clang-tidy"
+    ],
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono"
+}

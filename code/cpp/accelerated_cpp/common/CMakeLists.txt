@@ -28,7 +28,7 @@ target_sources(common
 
 # 4. 指定输出目录，避免污染其他目标
 set_target_properties(common PROPERTIES
-    LIBRARY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
 )
 
 # 5. （可选）安装配置，方便以后用 find_package 或发布

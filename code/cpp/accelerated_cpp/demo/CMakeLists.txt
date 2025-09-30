@@ -5,7 +5,7 @@ set(CH_NO_COMMON  02 03)
 set(CH_WITH_COMMON 04 05 06 07 11 12 13)
 
 # 统一输出目录
-set(DEMO_OUTPUT_DIR "${PROJECT_SOURCE_DIR}/bin")
+set(DEMO_OUTPUT_DIR "${CMAKE_BINARY_DIR}/bin")
 
 # 生成不依赖 common 的可执行文件
 foreach(ch IN LISTS CH_NO_COMMON)
