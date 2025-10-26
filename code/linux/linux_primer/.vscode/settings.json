@@ -4,6 +4,7 @@
         "--compile-commands-dir=/home/hooloofrog/ToyNet/code/linux/linux_primer/build-ninja",
         "--background-index",
         "--clang-tidy",
+        "--clang-tidy-checks=modernize-*,performance-*,bugprone-*",
         "--cache-dir=/home/hooloofrog/ToyNet/code/linux/linux_primer/build-ninja/.clangd-cache"
     ],
 
