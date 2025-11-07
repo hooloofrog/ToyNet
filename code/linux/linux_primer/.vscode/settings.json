@@ -21,6 +21,10 @@
     // ---------------------------
     "cmake.buildDirectory": "${workspaceFolder}/build-ninja",  // 指定 Ninja 构建目录
     "cmake.generator": "Ninja",                               // 使用 Ninja 生成
-    "cmake.configureOnOpen": false                             // 打开工作区不自动生成默认 build
+    "cmake.configureOnOpen": false,
+    "cSpell.words": [
+        "ggdb",
+        "STREQUAL"
+    ] // 打开工作区不自动生成默认 build
 }
 
