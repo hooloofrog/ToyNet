@@ -5,6 +5,9 @@
         "--background-index",
         "--clang-tidy",
         "--clang-tidy-checks=modernize-*,performance-*,bugprone-*",
+        "--log=verbose",
+        "--log-file=/tmp/clangd-log.txt",
+        "--query-driver=/usr/bin/gcc,/usr/bin/clang",
         "--cache-dir=/home/hooloofrog/ToyNet/code/linux/linux_primer/build-ninja/.clangd-cache"
     ],
 
