@@ -1,33 +1,52 @@
 {
-    // Clangd 配置
+    // 1. 禁用微软 C/C++ 插件的智能感知，避免与 clangd 冲突
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.formatting": "disabled",
+    "C_Cpp.autocomplete": "disabled",
+    "C_Cpp.errorSquiggles": "disabled",
+
+    // 2. Clangd 核心配置
+    "clangd.path": "/usr/bin/clangd",
     "clangd.arguments": [
-        "--compile-commands-dir=/home/hooloofrog/ToyNet/code/linux/linux_primer/build-ninja",
         "--background-index",
         "--clang-tidy",
-        "--clang-tidy-checks=modernize-*,performance-*,bugprone-*",
-        "--log=verbose",
-        "--log-file=/tmp/clangd-log.txt",
-        "--query-driver=/usr/bin/gcc,/usr/bin/clang",
-        "--cache-dir=/home/hooloofrog/ToyNet/code/linux/linux_primer/build-ninja/.clangd-cache"
+        "--completion-style=detailed",
+        "--function-arg-placeholders",
+        "--header-insertion=iwyu",
+        "--query-driver=/usr/bin/gcc,/usr/bin/g++,/usr/bin/clang,/usr/bin/clang++,/usr/bin/cc,/usr/bin/c++"
     ],
 
-    // C 格式化器
+    // 3. 格式化配置
+    "clang-format.executable": "/usr/bin/clang-format",
     "[c]": {
-        "editor.defaultFormatter": "xaver.clang-format"
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false
     },
 
-    // 终端字体
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    // 4. CMake Tools 配置
+    "cmake.buildDirectory": "${workspaceFolder}/build-ninja",
+    "cmake.generator": "Ninja",
+    "cmake.configureOnOpen": true,
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
 
-    // ---------------------------
-    // CMake Tools 配置
-    // ---------------------------
-    "cmake.buildDirectory": "${workspaceFolder}/build-ninja",  // 指定 Ninja 构建目录
-    "cmake.generator": "Ninja",                               // 使用 Ninja 生成
-    "cmake.configureOnOpen": false,
+    // 5. 终端与拼写检查
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "cSpell.words": [
         "ggdb",
-        "STREQUAL"
-    ] // 打开工作区不自动生成默认 build
-}
+        "STREQUAL",
+        "clangd",
+        "compile_commands",
+        "hooloofrog",
+        "ToyNet",
+        "iwyu"
+    ],
 
+    // 6. JSON 与 Markdown 相关
+    "json.schemaDownload.enable": true
+}

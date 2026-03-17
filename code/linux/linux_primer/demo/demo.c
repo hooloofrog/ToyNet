@@ -7,8 +7,7 @@ void Print(int sum)
     long long time_stamp = time(NULL);
 }
 
-int main ()
+int main()
 {
-    
     return 0;
 }
