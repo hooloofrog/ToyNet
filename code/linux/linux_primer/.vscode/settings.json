@@ -1,22 +1,23 @@
 {
-    // 1. 禁用微软 C/C++ 插件的智能感知，避免与 clangd 冲突
+    // ================= 1. C/C++ 核心 (Clangd 模式) =================
+    // 禁用微软官方插件，完全由 Clangd 接管，避免冲突
     "C_Cpp.intelliSenseEngine": "disabled",
     "C_Cpp.formatting": "disabled",
     "C_Cpp.autocomplete": "disabled",
     "C_Cpp.errorSquiggles": "disabled",
 
-    // 2. Clangd 核心配置
+    // ================= 2. Clangd 配置 =================
     "clangd.path": "/usr/bin/clangd",
     "clangd.arguments": [
-        "--background-index",
-        "--clang-tidy",
-        "--completion-style=detailed",
-        "--function-arg-placeholders",
-        "--header-insertion=iwyu",
-        "--query-driver=/usr/bin/gcc,/usr/bin/g++,/usr/bin/clang,/usr/bin/clang++,/usr/bin/cc,/usr/bin/c++"
+        "--background-index",             // 后台建立索引，跳转更准
+        "--clang-tidy",                   // 开启静态检查
+        "--completion-style=detailed",    // 详细补全
+        "--function-arg-placeholders",    // 函数参数占位
+        "--header-insertion=iwyu",        // 自动补全头文件
+        "--query-driver=/usr/bin/*"      // 【优化】通配符匹配，自动适配 gcc/clang 版本更新
     ],
 
-    // 3. 格式化配置
+    // ================= 3. 格式化配置 =================
     "clang-format.executable": "/usr/bin/clang-format",
     "[c]": {
         "editor.defaultFormatter": "xaver.clang-format",
@@ -29,14 +30,21 @@
         "editor.formatOnPaste": false
     },
 
-    // 4. CMake Tools 配置
+    // ================= 4. CMake 配置 (无链接模式) =================
     "cmake.buildDirectory": "${workspaceFolder}/build-ninja",
     "cmake.generator": "Ninja",
     "cmake.configureOnOpen": true,
-    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+    // 【优化】删除 copyCompileCommands，不再生成根目录软链接
+    // Clangd 会自动在 build-ninja 中查找 compile_commands.json
 
-    // 5. 终端与拼写检查
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    // ================= 5. 编辑器体验优化 =================
+    // 括号匹配高亮（C++ 必备，防止眼花）
+    "editor.guides.bracketPairs": "active",
+    // 自动闭合括号
+    "editor.autoClosingBrackets": "always",
+
+    // ================= 6. 终端与字体 =================
+    "terminal.integrated.fontFamily": "'Hack Nerd Font Mono', Consolas, 'Courier New', monospace",
     "cSpell.words": [
         "ggdb",
         "STREQUAL",
@@ -47,6 +55,20 @@
         "iwyu"
     ],
 
-    // 6. JSON 与 Markdown 相关
+    // ================= 7. 性能与搜索优化 (关键) =================
+    // 【优化】排除构建目录，防止全局搜索时卡死
+    "search.exclude": {
+        "**/build-ninja": true,
+        "**/build": true,
+        "**/bin": true,
+        "**/obj": true
+    },
+    // 文件资源管理器中也隐藏构建目录，保持清爽
+    "files.exclude": {
+        "**/build-ninja": true,
+        "**/build": true
+    },
+
+    // ================= 8. 其他 =================
     "json.schemaDownload.enable": true
 }
