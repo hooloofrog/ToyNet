@@ -44,7 +44,28 @@
     "editor.autoClosingBrackets": "always",
 
     // ================= 6. 终端与字体 =================
-    "terminal.integrated.fontFamily": "'Hack Nerd Font Mono', Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "'Maple Mono NF CN', 'Maple Mono NF CN Light', Consolas, monospace",
+    "terminal.integrated.fontSize": 17.5,
+    "terminal.integrated.lineHeight": 1.22,
+    "terminal.integrated.letterSpacing": 0.05,
+    "terminal.integrated.fontWeight": "400",
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.gpuAcceleration": "on",
+
+    "editor.fontFamily": "'ComicShannsMono Nerd Font', 'Maple Mono NF CN', 'Maple Mono NF CN Light', 'Microsoft YaHei', Consolas, monospace",
+    "editor.fontSize": 18,
+    "editor.lineHeight": 26,
+    "editor.letterSpacing": 0.15,
+    "editor.fontWeight": "normal",
+    "editor.fontLigatures": false,
+
+    "editor.lineNumbersFontSize": 17,
+    "editor.suggestFontSize": 16,
+    "editor.hover.fontSize": 16,
+    "breadcrumbs.fontSize": 16,
+    "scm.inputFontSize": 16,
+
+    "window.zoomLevel": 0,
     "cSpell.words": [
         "ggdb",
         "STREQUAL",
