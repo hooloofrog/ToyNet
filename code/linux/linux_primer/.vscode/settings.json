@@ -59,10 +59,10 @@
     "editor.fontWeight": "normal",
     "editor.fontLigatures": false,
 
-    "editor.lineNumbersFontSize": 17,
+    //"editor.lineNumbersFontSize": 17,
     "editor.suggestFontSize": 16,
-    "editor.hover.fontSize": 16,
-    "breadcrumbs.fontSize": 16,
+    //"editor.hover.fontSize": 16,
+    //"breadcrumbs.fontSize": 16,
     "scm.inputFontSize": 16,
 
     "window.zoomLevel": 0,
