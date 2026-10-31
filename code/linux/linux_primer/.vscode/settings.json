@@ -1,31 +1,33 @@
 {
     // ================= 1. C/C++ 核心 (Clangd 模式) =================
-    // 禁用微软官方插件，完全由 Clangd 接管，避免冲突
+    // 禁用微软cpptools的IntelliSense相关能力，保留【图形调试gdb面板】
     "C_Cpp.intelliSenseEngine": "disabled",
     "C_Cpp.formatting": "disabled",
     "C_Cpp.autocomplete": "disabled",
     "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.hover": "disabled", // 新增：避免cpptools悬浮提示和clangd冲突
 
     // ================= 2. Clangd 配置 =================
     "clangd.path": "/usr/bin/clangd",
     "clangd.arguments": [
-        "--background-index",             // 后台建立索引，跳转更准
-        "--clang-tidy",                   // 开启静态检查
-        "--completion-style=detailed",    // 详细补全
-        "--function-arg-placeholders",    // 函数参数占位
-        "--header-insertion=iwyu",        // 自动补全头文件
-        "--query-driver=/usr/bin/*"      // 【优化】通配符匹配，自动适配 gcc/clang 版本更新
+        "--background-index",                // 后台索引，跳转更快
+        "--clang-tidy",                      // 开启clang-tidy静态检查
+        "--completion-style=detailed",       // 详细补全信息
+        "--function-arg-placeholders",      // 函数参数占位提示
+        "--header-insertion=iwyu",           // IWYU自动头文件管理，不喜欢就改成 never
+        "--all-scopes-completion",           // 新增：补全包含私有、内部作用域符号
+        "--query-driver=/usr/bin/gcc,/usr/bin/g++" // 修正：只指定gcc/g++，不再用*通配
     ],
 
     // ================= 3. 格式化配置 =================
     "clang-format.executable": "/usr/bin/clang-format",
     "[c]": {
-        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",//xaver.clang-format
         "editor.formatOnSave": false,
         "editor.formatOnPaste": false
     },
     "[cpp]": {
-        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
         "editor.formatOnSave": false,
         "editor.formatOnPaste": false
     },

@@ -35,13 +35,14 @@
 
     "window.zoomLevel": 0,
     "cSpell.words": [
-        "ggdb",
-        "STREQUAL",
         "clangd",
         "compile_commands",
+        "ggdb",
+        "Hcat",
         "hooloofrog",
-        "ToyNet",
-        "iwyu"
+        "iwyu",
+        "STREQUAL",
+        "ToyNet"
     ],
 
     // ---------------------------
