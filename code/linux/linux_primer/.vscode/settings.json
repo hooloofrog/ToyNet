@@ -13,7 +13,7 @@
         "--background-index",                // 后台索引，跳转更快
         "--clang-tidy",                      // 开启clang-tidy静态检查
         "--completion-style=detailed",       // 详细补全信息
-        "--function-arg-placeholders",      // 函数参数占位提示
+        "--function-arg-placeholders",       // 函数参数占位提示
         "--header-insertion=iwyu",           // IWYU自动头文件管理，不喜欢就改成 never
         "--all-scopes-completion",           // 新增：补全包含私有、内部作用域符号
         "--query-driver=/usr/bin/gcc,/usr/bin/g++" // 修正：只指定gcc/g++，不再用*通配
@@ -92,6 +92,15 @@
         "**/build": true
     },
 
-    // ================= 8. 其他 =================
+    // ================= 8. 内置 Git Blame =================
+    "git.blame.statusBarItem.enabled": true,
+    //"git.blame.statusBarItem.format": "${author} • ${date} • ${shortHash}",
+    "git.blame.statusBarItem.format": "${shortHash} ${author}",
+    "git.blame.statusBarItem.dateFormat": "yyyy-MM-dd",
+    "git.blame.inline.enabled": false,
+    "git.blame.inline.format": "${author}, ${date}",
+    "git.blame.inline.dateFormat": "yyyy-MM-dd",
+
+    // ================= 9. 其他 =================
     "json.schemaDownload.enable": true
 }
